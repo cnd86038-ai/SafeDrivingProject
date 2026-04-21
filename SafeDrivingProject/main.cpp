@@ -57,7 +57,7 @@ void showLowest(string regionName, int accidents)
 
 int main()
 {
-	const int NUM_REGIONS = 2; // Number of regions to compare (can change as needed)
+	const int NUM_REGIONS = 3; // Number of regions to compare (can change as needed)
 	string regionName;
 	string lowestRegion;
 	int accidents;
@@ -72,15 +72,6 @@ int main()
 		{
 			lowestRegion = regionName;
 			lowestAccidents = accidents;
-		}
-		else
-			{
-			//compare using isLower function to determine if current region has more accidents than lowestRegion
-			if (!isLower(accidents, lowestAccidents))
-			{
-				lowestRegion = regionName;
-				lowestAccidents = accidents;
-			}
 		}
 	}
 	showLowest(lowestRegion, lowestAccidents);
