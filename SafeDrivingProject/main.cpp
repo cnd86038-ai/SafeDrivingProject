@@ -54,3 +54,36 @@ void showLowest(string regionName, int accidents)
 	cout << "Region: " << regionName << endl;
 	cout << "Accidents: " << accidents << endl;
 }
+
+int main()
+{
+	const int NUM_REGIONS = 2; // Number of regions to compare (can change as needed)
+	string regionName;
+	string lowestRegion;
+	int accidents;
+	int lowestAccidents = 0;
+
+	for (int i = 0; i < NUM_REGIONS; i++)
+	{
+		cout << "\nRegion " << (i + 1) << " Information:\n";
+
+		getRegInfo(regionName, accidents);
+		if (i == 0 || isLower(accidents, lowestAccidents))
+		{
+			lowestRegion = regionName;
+			lowestAccidents = accidents;
+		}
+		else
+			{
+			//compare using isLower function to determine if current region has more accidents than lowestRegion
+			if (!isLower(accidents, lowestAccidents))
+			{
+				lowestRegion = regionName;
+				lowestAccidents = accidents;
+			}
+		}
+	}
+	showLowest(lowestRegion, lowestAccidents);
+
+	return 0;
+}
